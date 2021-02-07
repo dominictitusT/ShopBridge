@@ -13,6 +13,10 @@ Typescript
 SQLLite
 Xunit
 
+## Published Files for Instant Run the Application
+1. Open Published-SelfContained folder
+2. Execute ShopBridge.exe
+
 ## Project Structure
 ![Alt text](https://github.com/dominictitusT/ShopBridge/blob/main/ShopBridge/screenshots/Runsource.png "Project Structure")
 

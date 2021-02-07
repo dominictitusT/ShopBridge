@@ -14,19 +14,19 @@ SQLLite
 Xunit
 
 ## Project Structure
-![Alt text](/ShopBridge/ShopBridge/screenshots/Runsource.png?raw=true "Project Structure")
+![Alt text](https://github.com/dominictitusT/ShopBridge/blob/main/ShopBridge/screenshots/Runsource.png "Project Structure")
 
 ## Output Window
 
-![Alt text](/ShopBridge/ShopBridge/screenshots/Output.png?raw=true "Project Structure")
+![Alt text](https://github.com/dominictitusT/ShopBridge/blob/main/ShopBridge/screenshots/Output.png "Project Structure")
 
 ## Run Source
  Click Run Button
 
-![Alt text](/ShopBridge/ShopBridge/screenshots/Runsource.png?raw=true "Project Structure")
+![Alt text](https://github.com/dominictitusT/ShopBridge/blob/main/ShopBridge/screenshots/Runsource.png "Project Structure")
 
  ## Unit Testing (Run Tests or Debug)
  Right Click ShopBridgeTest and click run test
 
-![Alt text](/ShopBridge/ShopBridge/screenshots/runtest.png?raw=true "Project Structure")
+![Alt text](https://github.com/dominictitusT/ShopBridge/blob/main/ShopBridge/screenshots/runtest.png "Project Structure")
 

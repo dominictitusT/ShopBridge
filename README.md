@@ -7,10 +7,10 @@ VisualStudio : 2019
 Note : For backend i used SQLLite
 
 ## Technology 
-Angular 
-.Net Core
-Typescript
-SQLLite
+Angular,
+.Net Core,
+Typescript,
+SQLLite and
 Xunit
 
 ## Published Files for Instant Run the Application

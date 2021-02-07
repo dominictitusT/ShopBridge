@@ -1,0 +1,112 @@
+<div class="container" *ngIf="!View">
+  <div class="row justify-content-center align-items-center">
+    <div class="card text-center w-100">
+      <div class="card-header mb-3">
+        Add New Products
+      </div>
+      <form [formGroup]="ProductForm" class="col-12">
+        <div class="form-group">
+          <div class="form-row mb-3">
+            <div class="col">
+              <input type="text" class="form-control w-100" formControlName="name" name="name"
+                placeholder="Product Name">
+              <ng-container
+                *ngIf="ProductForm.controls['name'].invalid && (ProductForm.controls['name'].dirty || ProductForm.controls['name'].touched)">
+                <div class="invalid-feedback" *ngIf="ProductForm.controls['name'].errors.required">
+                  Name is required.
+                </div>
+
+              </ng-container>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control w-100" formControlName="price" name="price" placeholder="Price">
+              <ng-container
+                *ngIf="ProductForm.controls['price'].invalid && (ProductForm.controls['price'].dirty || ProductForm.controls['price'].touched)">
+                <div class="invalid-feedback" *ngIf="ProductForm.controls['price'].errors.required">
+                  Price is required.
+                </div>
+                <div class="invalid-feedback" *ngIf="ProductForm.controls['price'].errors.pattern">
+                  Price is Invalid
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-row mb-3">
+            <div class="col">
+              <textarea class="form-control w-100" formControlName="description" name="description"
+                placeholder="Description"> </textarea>
+              <ng-container
+                *ngIf="ProductForm.controls['description'].invalid && (ProductForm.controls['description'].dirty || ProductForm.controls['description'].touched)">
+                <div class="invalid-feedback" *ngIf="ProductForm.controls['description'].errors.required">
+                  Description is required.
+                </div>
+              </ng-container>
+            </div>
+            <div class="col">
+              <div class="custom-file">
+                <input formControlName="imgName" type="file" class="custom-file-input" id="customFile"
+                  (change)="onSelectfile($event)">
+                <label class="custom-file-label" for="customFile" *ngIf="!File">Choose file</label>
+                <label class="custom-file-label" for="customFile" *ngIf="File">{{File.name}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="float-left">
+            <div class="alert alert-success" role="alert" *ngIf="done">
+              Product Added Successfully
+            </div>
+          </div>
+          <div class="float-right">
+
+            <button class="btn btn-primary p-2 m-2" (click)="add()">Add</button>
+            <button class="btn btn-outline-danger p-2 m-3" (click)="resetForm()">Reset</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <img src="./assets/load.gif"  width="25" height="25" *ngIf="loader" >
+    <div class="alert alert-success" role="alert" *ngIf="Removedone">
+      Product Removed Successfully
+    </div>
+    <table class="table table-image" *ngIf="productList">
+      <thead>
+        <tr>
+          <th scope="col">Product ID</th>
+          <th scope="col">Image</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Description</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of productList">
+          <tr (click)="ViewProduct(item)">
+            <th scope="row">{{item.UnniqId}}</th>
+            <td>
+              <img width="35" height="35" src="{{href}}/images/{{item.UnniqId}}{{item.extension}}"
+                class="img-thumbnail img-rounded">
+            </td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}$</td>
+            <td>{{item.description}}</td>
+            <td>
+              <button type="button" class="btn btn-outline-danger" style="border-radius: 50%;"
+                (click)="remove(item.UnniqId)">X</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="View">
+  <app-view [product]="ProductItem" (backbtn)="back($event)"></app-view>
+</div>
+

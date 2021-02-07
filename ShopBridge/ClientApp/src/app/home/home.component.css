@@ -1,0 +1,17 @@
+.row{
+    height:50vh;
+}
+
+.container{
+    height: 100vh ;
+    
+}
+.invalid-feedback
+{
+    display: block;
+    text-align: right;
+    /* width: 100%; */
+    font-size: 62%;
+    height: 0px;
+    color: #dc3545;
+}

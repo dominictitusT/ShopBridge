@@ -86,7 +86,7 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let item of productList">
-          <tr (click)="ViewProduct(item)">
+          <tr >
             <th scope="row">{{item.UnniqId}}</th>
             <td>
               <img width="35" height="35" src="{{href}}/images/{{item.UnniqId}}{{item.extension}}"
@@ -96,8 +96,9 @@
             <td>{{item.price}}$</td>
             <td>{{item.description}}</td>
             <td>
-              <button type="button" class="btn btn-outline-danger" style="border-radius: 50%;"
-                (click)="remove(item.UnniqId)">X</button>
+              <a style="height: 25px; width:25px;color: blue;padding:10px;cursor:pointer;" (click)="ViewProduct(item)">View</a>
+              <a  style="height: 25px; width:25px;color: #dc3545;padding:10px;cursor:pointer;"
+                (click)="remove(item.UnniqId)">X</a>
             </td>
           </tr>
         </ng-container>
